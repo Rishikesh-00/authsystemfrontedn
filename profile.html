@@ -24,7 +24,7 @@
     async function getProfile() {
       const token = localStorage.getItem('token');
       if (!token) {
-        window.location.href = 'login.html';
+        window.location.href = 'index.html';
       }
 
       const response = await fetch('https://authsystembacked.onrender.com/api/profile', {
@@ -43,13 +43,13 @@
           });
       } else {
         alert(data.message);
-        window.location.href = 'login.html';
+        window.location.href = 'index.html';
       }
     }
 
     document.getElementById('logoutButton').addEventListener('click', () => {
       localStorage.removeItem('token');
-      window.location.href = 'login.html';
+      window.location.href = 'index.html';
     });
 
     getProfile();
